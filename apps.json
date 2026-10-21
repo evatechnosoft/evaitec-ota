@@ -1,0 +1,243 @@
+{
+  "updated": "2026-10-21T06:30:00Z",
+  "apps": [
+    {
+      "id": "evaitec-ota-tv",
+      "packageName": "com.evaitec.ota.tv",
+      "versionCode": 14,
+      "name": "evaitecOTA",
+      "tagline": "Televizyona uygulama kuran ve güncelleyen yükleyici.",
+      "platform": "tv",
+      "icon": "assets/evaitec-ota.svg",
+      "screenshots": [],
+      "version": "0.1.13",
+      "releaseDate": "2026-09-20",
+      "sizeBytes": 190769,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/evaitec-ota-tv-v0.1.13/evaitec-ota-tv-0.1.13.apk",
+      "sha256": "346f20dcf1ac57956da3d9617ce5e835cbc1dcf43fbcc34420f2cd7dd37ab337",
+      "notes": "Indirme once ev sunucusundan, sonra Cloudflare tunelinden, en sonda GitHub.",
+      "mirrors": [
+        "http://192.168.0.186:8099/evaitec-ota-tv.apk"
+      ]
+    },
+    {
+      "id": "evaitec-ota-mobile",
+      "packageName": "com.evaitec.ota.mobile",
+      "versionCode": 21,
+      "name": "evaitecOTA",
+      "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
+      "platform": "phone",
+      "icon": "assets/evaitec-ota.svg",
+      "screenshots": [],
+      "version": "0.1.22",
+      "releaseDate": "2026-10-07",
+      "sizeBytes": 4712784,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/ota-mobile-v0.1.22/evaitec-ota-mobile-0.1.22.apk",
+      "sha256": "e232ddfa13f2f11009d7772891ba3960f767cac31fe1c4e4140d3eb4d67a2b46",
+      "notes": "Indirme sekme/sayfa degisince kopmaz, ikinci dokunus sifirdan baslatmaz; ayna eski dosyayi vermez.",
+      "mirrors": [
+        "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
+      ]
+    },
+    {
+      "id": "evaglass-phone",
+      "packageName": "com.evaglass.app",
+      "versionCode": 808,
+      "name": "evaglass",
+      "tagline": "AI gözlüğünüzü BLE ile kontrol eden telefon uygulaması.",
+      "platform": "phone",
+      "icon": "assets/evaglass-phone.svg",
+      "screenshots": [],
+      "version": "0.8.8",
+      "releaseDate": "2026-09-16",
+      "sizeBytes": 22831134,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/v0.8.8/evaglass-0.8.8.apk",
+      "sha256": "6194cc972010a718e76f553568eb7777a9409bcc44eb209ce27781bd0b39eb67",
+      "notes": "Android 10+. Kurulumdan önce \"bilinmeyen kaynaklara izin ver\" açık olmalı.",
+      "mirrors": [
+        "http://192.168.0.186:8099/evaglass-phone.apk"
+      ]
+    },
+    {
+      "id": "evaglass-watch",
+      "packageName": "com.evaglass.app",
+      "versionCode": 808,
+      "name": "evaglass Saat",
+      "tagline": "Gözlük kısayolları bileğinizde — Wear OS companion.",
+      "platform": "watch",
+      "icon": "assets/evaglass-watch.svg",
+      "screenshots": [],
+      "version": "0.8.8",
+      "releaseDate": "2026-09-16",
+      "sizeBytes": 2855322,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/v0.8.8/evaglass-watch-0.8.8.apk",
+      "sha256": "4b2236e27df8f7ea8892e7e55f4086c96a7806f15726f5de2af2ef99a534ccc5",
+      "notes": "Bu dosyayı telefona kurmayın; telefon uygulamasıyla aynı paket adını taşır.",
+      "mirrors": [
+        "http://192.168.0.186:8099/evaglass-watch.apk"
+      ]
+    },
+    {
+      "id": "evaitec-ota-wear",
+      "packageName": "com.evaitec.ota.mobile",
+      "versionCode": 19,
+      "name": "evaitecOTA",
+      "tagline": "Saate uygulama kuran ve güncelleyen yükleyici.",
+      "platform": "watch",
+      "icon": "assets/evaitec-ota.svg",
+      "screenshots": [],
+      "version": "0.1.24",
+      "releaseDate": "2026-10-07",
+      "sizeBytes": 379389,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/evaitec-ota-wear-v0.1.24/evaitec-ota-wear-0.1.24.apk",
+      "sha256": "85155fdc3fc136dd84ac2a2b69989025cf51535444050ba8534df1cccee4b263",
+      "notes": "Indirme sekme/sayfa degisince kopmaz, ikinci dokunus sifirdan baslatmaz; ayna eski dosyayi vermez.",
+      "mirrors": [
+        "http://192.168.0.186:8099/evaitec-ota-wear.apk"
+      ]
+    },
+    {
+      "id": "netmovies-mini-watch",
+      "packageName": "com.evaitec.netmovies.wear",
+      "versionCode": 125,
+      "name": "NetMovies Mini",
+      "tagline": "Televizyonu bileğinizden sürün — kaydır yön, dokun OK.",
+      "platform": "watch",
+      "icon": "assets/netmovies-watch.svg",
+      "screenshots": [],
+      "version": "0.1.25",
+      "releaseDate": "2026-10-15",
+      "sizeBytes": 7746150,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-wear-v0.1.25/netmovies-mini-watch-0.1.25.apk",
+      "sha256": "b7dbde1262191a8193a2e2487f1bab3d9c5d0d0d3d9ddd786d7975daf9b571e6",
+      "notes": "Hava faresi: hız ayarlandı, ⇄/⇅ eksen çevirme, ⌃ alt yay menü.",
+      "mirrors": [
+        "http://192.168.0.186:8099/netmovies-mini-watch.apk"
+      ]
+    },
+    {
+      "id": "wellness-phone",
+      "packageName": "com.evaitec.wellness",
+      "versionCode": 4600,
+      "name": "Wellness",
+      "tagline": "Kilo, protein, antrenman ve saat verisi tek gunlukte; Eva sorar, sen onaylarsin.",
+      "platform": "phone",
+      "icon": "assets/wellness.svg",
+      "screenshots": [],
+      "version": "0.46.0",
+      "releaseDate": "2026-10-14",
+      "sizeBytes": 25283150,
+      "sha256": "f98d61f031ea85a0470820ff2ceac4a096a472b2fca8925927350a24c04cada1",
+      "downloadUrl": "https://fit.evaitec.com/ota/wellness-0.46.0.apk",
+      "notes": "Android 8+. Giris adresi https://fit.evaitec.com — Ayar > Sunucu alanina yalnizca token girilir. Health Connect izinleri telefon ayarlarindan verilir."
+    },
+    {
+      "id": "wellness-wear",
+      "packageName": "com.evaitec.wellness",
+      "versionCode": 4600,
+      "name": "Wellness Saat",
+      "tagline": "Adim, nabiz ve antrenmani bilekten toplar; telefonla ayni gunluge yazar.",
+      "platform": "watch",
+      "icon": "assets/wellness.svg",
+      "screenshots": [],
+      "version": "0.46.0",
+      "releaseDate": "2026-10-14",
+      "sizeBytes": 1646315,
+      "sha256": "94c3b8c531edad302dcc8d4e44763a8eed46787609e4cd25a49b856a9356061f",
+      "downloadUrl": "https://fit.evaitec.com/ota/wellness-wear-0.46.0.apk",
+      "notes": "Bu dosyayi telefona kurmayin; telefon uygulamasiyla ayni paket adini tasir."
+    },
+    {
+      "id": "netmovies-phone",
+      "packageName": "com.evaitec.netmovies.tv",
+      "versionCode": 973,
+      "name": "NetMovies",
+      "tagline": "Televizyonu telefondan sür: ara, seç, TV'de başlat.",
+      "platform": "phone",
+      "icon": "assets/netmovies-phone.svg",
+      "screenshots": [],
+      "version": "0.9.73",
+      "releaseDate": "2026-10-21",
+      "sizeBytes": 22785064,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.73/netmovies-tv-0.9.73.apk",
+      "sha256": "92b40e2faf4a44bde9b6570be4f97e76a44d8effeb59b0eb933ad2b1665811d1",
+      "notes": "Cihaz başına izleme geçmişi ve profiller; yeni cihaz ilk açılışta bir kez PIN sorar.",
+      "mirrors": [
+        "http://192.168.0.186:8099/netmovies-phone.apk"
+      ]
+    },
+    {
+      "id": "netmovies-tv",
+      "packageName": "com.evaitec.netmovies.tv",
+      "versionCode": 973,
+      "name": "NetMovies",
+      "tagline": "Ev ağındaki NetMovies sunucusunu televizyonda izleyin.",
+      "platform": "tv",
+      "icon": "assets/netmovies-tv.svg",
+      "screenshots": [],
+      "version": "0.9.73",
+      "releaseDate": "2026-10-21",
+      "sizeBytes": 22785064,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.73/netmovies-tv-0.9.73.apk",
+      "sha256": "92b40e2faf4a44bde9b6570be4f97e76a44d8effeb59b0eb933ad2b1665811d1",
+      "notes": "Cihaz başına izleme geçmişi ve profiller; yeni cihaz ilk açılışta bir kez PIN sorar.",
+      "mirrors": [
+        "http://192.168.0.186:8099/netmovies-tv.apk"
+      ]
+    },
+    {
+      "id": "rcmycar-phone",
+      "name": "rcmycar",
+      "tagline": "Aracı telefondan kilitle, aç, çalıştır; yaklaşınca kapı açılır.",
+      "platform": "phone",
+      "sizeBytes": 25210085,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/rcmycar-v0.3.22/rcmycar-0.3.22.apk",
+      "sha256": "521770e4e9de3ea0dd2796b5077528b793e002464944966f0f5764105f09bd08",
+      "notes": "Android 12+. Ilk surum, arac uzerinde test edilmedi. Ilk acilista Bluetooth ve bildirim izni ister.",
+      "packageName": "com.evaitec.rcmycar",
+      "versionCode": 38,
+      "version": "0.3.22",
+      "releaseDate": "2026-10-07",
+      "icon": "assets/rcmycar.svg",
+      "screenshots": [],
+      "mirrors": [
+        "http://192.168.0.186:8099/rcmycar-phone.apk"
+      ]
+    },
+    {
+      "id": "rcmycar-watch",
+      "name": "rcmycar Saat",
+      "tagline": "Kilitle / Aç / Çalıştır bileğinde; komutu telefon iletir.",
+      "platform": "watch",
+      "sizeBytes": 1860527,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/rcmycar-v0.3.22/rcmycar-watch-0.3.22.apk",
+      "sha256": "220976cd4f46802ccae1265964ae2fcd02d4414859b633abf45f486f49c578bc",
+      "notes": "Bu dosyayi telefona kurmayin; telefon uygulamasiyla ayni paket adini tasir.",
+      "packageName": "com.evaitec.rcmycar",
+      "versionCode": 38,
+      "version": "0.3.22",
+      "releaseDate": "2026-10-07",
+      "icon": "assets/rcmycar.svg",
+      "screenshots": [],
+      "mirrors": [
+        "http://192.168.0.186:8099/rcmycar-watch.apk"
+      ]
+    },
+    {
+      "id": "evabench",
+      "name": "EvaBench",
+      "packageName": "com.evaitec.evabench",
+      "platform": "android",
+      "version": "0.2.0",
+      "versionCode": 2,
+      "releaseDate": "2026-10-05",
+      "sizeBytes": 22924878,
+      "sha256": "5bebfa838de686e44e05bac689a5d3877bc2b6cf1224e87f0b04eea84328c1da",
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/evabench-v0.2.0/evabench-0.2.0.apk",
+      "notes": "EvaBench 0.2.0: BLE/WiFi tarama, GATT, konsol (BLE/USB/WiFi), uzak menzil, OTA",
+      "mirrors": [
+        "http://192.168.0.186:8099/evabench.apk"
+      ]
+    }
+  ]
+}
