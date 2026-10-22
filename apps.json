@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T18:39:53Z",
+  "updated": "2026-10-22T18:53:04Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -150,18 +150,18 @@
     {
       "id": "netmovies-phone",
       "packageName": "com.evaitec.netmovies.tv",
-      "versionCode": 974,
+      "versionCode": 975,
       "name": "NetMovies",
       "tagline": "Televizyonu telefondan sür: ara, seç, TV'de başlat.",
       "platform": "phone",
       "icon": "assets/netmovies-phone.svg",
       "screenshots": [],
-      "version": "0.9.74",
-      "releaseDate": "2026-10-21",
+      "version": "0.9.75",
+      "releaseDate": "2026-10-22",
       "sizeBytes": 22785064,
-      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.74/netmovies-tv-0.9.74.apk",
-      "sha256": "2a5f6eb97a6550126936cae811bdff5606aa8df70e242e96e1e71222704269aa",
-      "notes": "Oynatıcı donması düzeltildi: tampon 64 MB",
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.75/netmovies-tv-0.9.75.apk",
+      "sha256": "9bd0bd48ab84d1a51fbb6aa57601ff18d3033909eda67820f25088749f6d125d",
+      "notes": "Arama sonucunda GERİ basınca çökme düzeltildi",
       "mirrors": [
         "http://192.168.0.186:8099/netmovies-phone.apk"
       ]
@@ -169,18 +169,18 @@
     {
       "id": "netmovies-tv",
       "packageName": "com.evaitec.netmovies.tv",
-      "versionCode": 974,
+      "versionCode": 975,
       "name": "NetMovies",
       "tagline": "Ev ağındaki NetMovies sunucusunu televizyonda izleyin.",
       "platform": "tv",
       "icon": "assets/netmovies-tv.svg",
       "screenshots": [],
-      "version": "0.9.74",
-      "releaseDate": "2026-10-21",
+      "version": "0.9.75",
+      "releaseDate": "2026-10-22",
       "sizeBytes": 22785064,
-      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.74/netmovies-tv-0.9.74.apk",
-      "sha256": "2a5f6eb97a6550126936cae811bdff5606aa8df70e242e96e1e71222704269aa",
-      "notes": "Oynatıcı donması düzeltildi: tampon 64 MB",
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/netmovies-tv-v0.9.75/netmovies-tv-0.9.75.apk",
+      "sha256": "9bd0bd48ab84d1a51fbb6aa57601ff18d3033909eda67820f25088749f6d125d",
+      "notes": "Arama sonucunda GERİ basınca çökme düzeltildi",
       "mirrors": [
         "http://192.168.0.186:8099/netmovies-tv.apk"
       ]
