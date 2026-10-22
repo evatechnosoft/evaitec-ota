@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T17:18:34Z",
+  "updated": "2026-10-22T17:56:31Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -23,18 +23,18 @@
     {
       "id": "evaitec-ota-mobile",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 23,
+      "versionCode": 24,
       "name": "evaitecOTA",
       "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
       "platform": "phone",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.24",
+      "version": "0.1.25",
       "releaseDate": "2026-10-22",
-      "sizeBytes": 4743792,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.24/evaitec-ota-mobile-0.1.24.apk",
-      "sha256": "c1e44a256450dcb6d59d14110100228603e389972d60308d363a22590b4e503a",
-      "notes": "ADB Cihazlar ekrani: agdaki cihazlari bul, baglan, klasorden APK kur, uygulama cek.",
+      "sizeBytes": 4744236,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.25/evaitec-ota-mobile-0.1.25.apk",
+      "sha256": "4dc8be629aca8e812805a23cc3fd0a7594b62f41a2b2c317416ab2b8caaa8375",
+      "notes": "Katalog önce ZimaOS; ADB klasörden kur: APK seçimi",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
       ]
