@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T18:53:04Z",
+  "updated": "2026-10-22T19:01:38Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -23,18 +23,18 @@
     {
       "id": "evaitec-ota-mobile",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 25,
+      "versionCode": 26,
       "name": "evaitecOTA",
       "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
       "platform": "phone",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.26",
+      "version": "0.1.27",
       "releaseDate": "2026-10-22",
-      "sizeBytes": 4748892,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.26/evaitec-ota-mobile-0.1.26.apk",
-      "sha256": "875e6c48242cb9f10f6673004c5d6388c7e4ba2a882539a4a9e19e2f4499d1f4",
-      "notes": "ADB: TLS öncelikli, cihaz adları model/seri, eşleştirme portu elle, Samsung saat ret açıklaması, kopan kurulumda yeniden bağlanma",
+      "sizeBytes": 4759296,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.27/evaitec-ota-mobile-0.1.27.apk",
+      "sha256": "f840a462e1d9b3097cfabb19bb346f55acea687a24601163ba1aa37df68cf1fd",
+      "notes": "ADB: listeli cihaz satırları, uygulama kaldırma, hazır komutlar",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
       ]
