@@ -1,21 +1,21 @@
 {
-  "updated": "2026-10-22T17:56:52Z",
+  "updated": "2026-10-22T17:57:12Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
       "packageName": "com.evaitec.ota.tv",
-      "versionCode": 14,
+      "versionCode": 15,
       "name": "evaitecOTA",
       "tagline": "Televizyona uygulama kuran ve güncelleyen yükleyici.",
       "platform": "tv",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.13",
-      "releaseDate": "2026-09-20",
-      "sizeBytes": 190769,
-      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/evaitec-ota-tv-v0.1.13/evaitec-ota-tv-0.1.13.apk",
-      "sha256": "346f20dcf1ac57956da3d9617ce5e835cbc1dcf43fbcc34420f2cd7dd37ab337",
-      "notes": "Indirme once ev sunucusundan, sonra Cloudflare tunelinden, en sonda GitHub.",
+      "version": "0.1.14",
+      "releaseDate": "2026-10-22",
+      "sizeBytes": 191889,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-tv-v0.1.14/evaitec-ota-tv-0.1.14.apk",
+      "sha256": "299f8145a48a8bb7ef5f30e0964bd69fc55ffab0849e95ee4876135cdf5ba119",
+      "notes": "Katalog önce ZimaOS; ADB klasörden kur: APK seçimi",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-tv.apk"
       ]
