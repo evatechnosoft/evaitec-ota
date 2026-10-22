@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T17:56:31Z",
+  "updated": "2026-10-22T17:56:52Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -80,18 +80,18 @@
     {
       "id": "evaitec-ota-wear",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 19,
+      "versionCode": 20,
       "name": "evaitecOTA",
       "tagline": "Saate uygulama kuran ve güncelleyen yükleyici.",
       "platform": "watch",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.24",
-      "releaseDate": "2026-10-07",
-      "sizeBytes": 379389,
-      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/evaitec-ota-wear-v0.1.24/evaitec-ota-wear-0.1.24.apk",
-      "sha256": "85155fdc3fc136dd84ac2a2b69989025cf51535444050ba8534df1cccee4b263",
-      "notes": "Indirme sekme/sayfa degisince kopmaz, ikinci dokunus sifirdan baslatmaz; ayna eski dosyayi vermez.",
+      "version": "0.1.25",
+      "releaseDate": "2026-10-22",
+      "sizeBytes": 379809,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-wear-v0.1.25/evaitec-ota-wear-0.1.25.apk",
+      "sha256": "1a28a20b6235b325878bb84811fd4f8a0168c0e649a5528bb6b33d094ad8c904",
+      "notes": "Katalog önce ZimaOS; ADB klasörden kur: APK seçimi",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-wear.apk"
       ]
