@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T09:00:00Z",
+  "updated": "2026-10-23T10:00:00Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -253,7 +253,23 @@
       "sizeBytes": 15387595,
       "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/watchfaces-wear-v0.2.0/evaitec-watchfaces-0.2.0.apk",
       "sha256": "943131d818af578e3ecf3dde8930afe15125f39e89c696ef14b5b2858dd3b8b6",
-      "notes": "Saat uygulaması. Telefon uygulaması henüz yok; kadranı saatteki karuselden seçin."
+      "notes": "Saat uygulaması. Kadranı telefondaki Evaitec Kadranlar'dan ya da saatteki karuselden seçin. Bu dosyayı telefona kurmayın."
+    },
+    {
+      "id": "watchfaces-phone",
+      "packageName": "com.evaitec.watchfaces",
+      "versionCode": 1,
+      "name": "Evaitec Kadranlar",
+      "tagline": "Kadranı telefondan seç, saatte değişsin.",
+      "platform": "phone",
+      "icon": "",
+      "screenshots": [],
+      "version": "0.1",
+      "releaseDate": "2026-10-23",
+      "sizeBytes": 14413567,
+      "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/watchfaces-phone-v0.1/evaitec-watchfaces-phone-0.1.apk",
+      "sha256": "08de01f370657b7c8e9df7be6e23c2b2ecb941ffb31be20678e017e5baf7c2f2",
+      "notes": "Telefon uygulaması. Saatte Evaitec Kadranlar (saat) kurulu olmalı. Bu dosyayı saate kurmayın."
     }
   ]
 }
