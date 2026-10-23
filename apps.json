@@ -253,7 +253,10 @@
       "sizeBytes": 15391587,
       "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/watchfaces-wear-v0.2.1/evaitec-watchfaces-wear-0.2.1.apk",
       "sha256": "f802b1e51d23affef0f82f8ff70549d39260c6c6159e71ccacd7a6da6dff5f4e",
-      "notes": "Saat uygulaması. Kadranı telefondaki Evaitec Watchfaces'dan ya da saatteki karuselden seçin. Bu dosyayı telefona kurmayın."
+      "notes": "Saat uygulaması. Kadranı telefondaki Evaitec Watchfaces'dan ya da saatteki karuselden seçin. Bu dosyayı telefona kurmayın.",
+      "mirrors": [
+        "http://192.168.0.186:8099/watchfaces-wear.apk"
+      ]
     },
     {
       "id": "watchfaces-phone",
@@ -269,7 +272,10 @@
       "sizeBytes": 14413574,
       "downloadUrl": "https://github.com/evatechnosoft/evaglass-releases/releases/download/watchfaces-phone-v0.1.1/evaitec-watchfaces-phone-0.1.1.apk",
       "sha256": "81177867e3ee9e643a32acd77edfedea14e36b1fed5d7a1f56a9bc916cd1ee7a",
-      "notes": "Telefon uygulaması. Saatte Evaitec Watchfaces (saat) kurulu olmalı. Bu dosyayı saate kurmayın."
+      "notes": "Telefon uygulaması. Saatte Evaitec Watchfaces (saat) kurulu olmalı. Bu dosyayı saate kurmayın.",
+      "mirrors": [
+        "http://192.168.0.186:8099/watchfaces-phone.apk"
+      ]
     }
   ]
 }
