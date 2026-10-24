@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Evaitec Watchfaces">
+  <defs>
+    <linearGradient id="wf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3A8A"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#wf)"/>
+  <circle cx="64" cy="64" r="38" fill="#111827" stroke="#E5E7EB" stroke-width="5"/>
+  <circle cx="60" cy="64" r="22" fill="#F3F4F6"/>
+  <circle cx="71" cy="58" r="20" fill="#111827"/>
+  <circle cx="44" cy="46" r="2" fill="#FBBF24"/>
+  <circle cx="86" cy="80" r="1.6" fill="#F3F4F6"/>
+  <circle cx="84" cy="50" r="1.4" fill="#F3F4F6"/>
+</svg>
