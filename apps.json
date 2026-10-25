@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T10:38:19Z",
+  "updated": "2026-10-25T10:39:13Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -80,18 +80,18 @@
     {
       "id": "evaitec-ota-wear",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 20,
+      "versionCode": 21,
       "name": "evaitecOTA",
       "tagline": "Saate uygulama kuran ve güncelleyen yükleyici.",
       "platform": "watch",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.25",
-      "releaseDate": "2026-10-22",
-      "sizeBytes": 379809,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-wear-v0.1.25/evaitec-ota-wear-0.1.25.apk",
-      "sha256": "1a28a20b6235b325878bb84811fd4f8a0168c0e649a5528bb6b33d094ad8c904",
-      "notes": "Katalog önce ZimaOS; ADB klasörden kur: APK seçimi",
+      "version": "0.1.26",
+      "releaseDate": "2026-10-25",
+      "sizeBytes": 385229,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-wear-v0.1.26/evaitec-ota-wear-0.1.26.apk",
+      "sha256": "8c9c611d1fcea19c13f3062f699e1a9a0a9eab8a6842d97da50925edd6130efb",
+      "notes": "Yenile dugmesi, katalog bildirimi (3 saatte bir), Guncelle basinca aninda durum.",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-wear.apk"
       ]
