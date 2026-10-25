@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T10:39:13Z",
+  "updated": "2026-10-25T11:11:36Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -23,18 +23,18 @@
     {
       "id": "evaitec-ota-mobile",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 29,
+      "versionCode": 30,
       "name": "evaitecOTA",
       "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
       "platform": "phone",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.30",
+      "version": "0.1.31",
       "releaseDate": "2026-10-25",
-      "sizeBytes": 4786868,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.30/evaitec-ota-mobile-0.1.30.apk",
-      "sha256": "79496d3834cdc182fb9855167c38a1e2f00d0f386f1979a58deaca5928b4dda3",
-      "notes": "Katalog bildirimi: yeni uygulama/guncelleme arka planda bildirilir (3 saatte bir).",
+      "sizeBytes": 4786892,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.31/evaitec-ota-mobile-0.1.31.apk",
+      "sha256": "b287b3f4fad0258210d86ce578daccb311ce941b0d69477ffc7058cba74e314d",
+      "notes": "Acilista cokme duzeltildi (bildirim izni).",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
       ]
