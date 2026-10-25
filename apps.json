@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T10:28:09Z",
+  "updated": "2026-10-25T10:38:19Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -23,18 +23,18 @@
     {
       "id": "evaitec-ota-mobile",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 27,
+      "versionCode": 29,
       "name": "evaitecOTA",
       "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
       "platform": "phone",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.28",
-      "releaseDate": "2026-10-22",
-      "sizeBytes": 4778028,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.28/evaitec-ota-mobile-0.1.28.apk",
-      "sha256": "53f773f59fa8a422648b3a2acc8ea55710c17235c2f98e632591e952389047b4",
-      "notes": "ADB uygulama yöneticisi: arama, Kullanıcı/Sistem/Devre dışı süzgeci, toplu kaldır/devre dışı/etkinleştir, UAD risk etiketleri; sade cihaz listesi ve yeniden adlandırma",
+      "version": "0.1.30",
+      "releaseDate": "2026-10-25",
+      "sizeBytes": 4786868,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.30/evaitec-ota-mobile-0.1.30.apk",
+      "sha256": "79496d3834cdc182fb9855167c38a1e2f00d0f386f1979a58deaca5928b4dda3",
+      "notes": "Katalog bildirimi: yeni uygulama/guncelleme arka planda bildirilir (3 saatte bir).",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
       ]
