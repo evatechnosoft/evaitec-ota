@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T11:11:36Z",
+  "updated": "2026-10-25T11:12:27Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -80,18 +80,18 @@
     {
       "id": "evaitec-ota-wear",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 21,
+      "versionCode": 22,
       "name": "evaitecOTA",
       "tagline": "Saate uygulama kuran ve güncelleyen yükleyici.",
       "platform": "watch",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.26",
+      "version": "0.1.27",
       "releaseDate": "2026-10-25",
-      "sizeBytes": 385229,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-wear-v0.1.26/evaitec-ota-wear-0.1.26.apk",
-      "sha256": "8c9c611d1fcea19c13f3062f699e1a9a0a9eab8a6842d97da50925edd6130efb",
-      "notes": "Yenile dugmesi, katalog bildirimi (3 saatte bir), Guncelle basinca aninda durum.",
+      "sizeBytes": 385241,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-wear-v0.1.27/evaitec-ota-wear-0.1.27.apk",
+      "sha256": "e531d008cca1d0eb15bb16079930cddb88fd3cd29ac34b0c6e5b8646bde9de08",
+      "notes": "Acilista cokme duzeltildi (bildirim izni).",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-wear.apk"
       ]
