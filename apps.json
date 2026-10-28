@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T06:15:31Z",
+  "updated": "2026-10-28T10:06:19Z",
   "apps": [
     {
       "id": "evaitec-ota-tv",
@@ -23,18 +23,18 @@
     {
       "id": "evaitec-ota-mobile",
       "packageName": "com.evaitec.ota.mobile",
-      "versionCode": 33,
+      "versionCode": 34,
       "name": "evaitecOTA",
       "tagline": "Telefona uygulama kuran ve guncelleyen yukleyici; saate de APK gonderir.",
       "platform": "phone",
       "icon": "assets/evaitec-ota.svg",
       "screenshots": [],
-      "version": "0.1.34",
-      "releaseDate": "2026-10-25",
-      "sizeBytes": 4787048,
-      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.34/evaitec-ota-mobile-0.1.34.apk",
-      "sha256": "c30024ff5a7047ae48715eb5137a1eda7c9123f9a6d587a8f1d3684f6e19b38d",
-      "notes": "İndirme arka planda kesilmiyor, kurulum ekranı açılıyor",
+      "version": "0.1.35",
+      "releaseDate": "2026-10-28",
+      "sizeBytes": 4791144,
+      "downloadUrl": "https://github.com/evatechnosoft/evaitec-ota/releases/download/evaitec-ota-mobile-v0.1.35/evaitec-ota-mobile-0.1.35.apk",
+      "sha256": "c57562242e2f9369131b11ccc53ca263c1ba381594011f25ec7e02d5aa52e836",
+      "notes": "Dar ızgara; dokununca alttan pencere; sağa/sola kaydırınca sekme değişir",
       "mirrors": [
         "http://192.168.0.186:8099/evaitec-ota-mobile.apk"
       ]
