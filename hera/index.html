@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hera tasma</title>
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; background: #111; color: #eee;
+         display: flex; flex-direction: column; gap: 14px; padding: 16px; min-height: 100vh; box-sizing: border-box; }
+  #status { text-align: center; font-size: 1.1rem; min-height: 1.4em; }
+  button { border: 0; border-radius: 16px; font-size: 2rem; font-weight: 600; color: #fff; padding: 0; }
+  button:disabled { opacity: .35; }
+  #connect { background: #2d5be3; font-size: 1.3rem; padding: 18px; }
+  .cue { flex: 1; min-height: 110px; }
+  [data-cue="1"] { background: #1f8a4c; }
+  [data-cue="2"] { background: #b8860b; }
+  [data-cue="3"] { background: #c0392b; }
+</style>
+</head>
+<body>
+<div id="status">Bağlı değil</div>
+<button id="connect">Bağlan</button>
+<button class="cue" data-cue="1" disabled>Gel</button>
+<button class="cue" data-cue="2" disabled>Otur</button>
+<button class="cue" data-cue="3" disabled>Aferin</button>
+<script>
+  // Must match firmware/collar/src/main.cpp
+  const SERVICE = 'c0a1c0de-0000-4000-8000-000000000001';
+  const CUE_CHAR = 'c0a1c0de-0000-4000-8000-000000000002';
+  const LOCK_MS = 500; // longest cue (otur) is 500 ms
+
+  const statusEl = document.getElementById('status');
+  const connectBtn = document.getElementById('connect');
+  const cueBtns = [...document.querySelectorAll('.cue')];
+  let device = null;
+  let cueChar = null;
+
+  const setStatus = (text) => { statusEl.textContent = text; };
+  const setCuesEnabled = (on) => cueBtns.forEach((b) => { b.disabled = !on; });
+
+  async function attach() {
+    setStatus('Bağlanıyor…');
+    const server = await device.gatt.connect();
+    const svc = await server.getPrimaryService(SERVICE);
+    cueChar = await svc.getCharacteristic(CUE_CHAR);
+    setStatus('Bağlı: ' + (device.name || 'tasma'));
+    setCuesEnabled(true);
+  }
+
+  async function onDisconnected() {
+    cueChar = null;
+    setCuesEnabled(false);
+    setStatus('Bağlantı koptu, yeniden deneniyor…');
+    for (let i = 0; i < 5 && device; i++) {
+      try { await attach(); return; } catch { await new Promise((r) => setTimeout(r, 1000)); }
+    }
+    setStatus('Bağlantı yok — Bağlan\'a bas');
+  }
+
+  connectBtn.addEventListener('click', async () => {
+    if (!navigator.bluetooth) { setStatus('Bu tarayıcıda Web Bluetooth yok (Android Chrome kullan)'); return; }
+    try {
+      device = await navigator.bluetooth.requestDevice({ filters: [{ services: [SERVICE] }] });
+      device.addEventListener('gattserverdisconnected', onDisconnected);
+      await attach();
+    } catch (e) {
+      setStatus('Hata: ' + e.message);
+    }
+  });
+
+  cueBtns.forEach((btn) => btn.addEventListener('click', async () => {
+    if (!cueChar) return;
+    setCuesEnabled(false);
+    try {
+      await cueChar.writeValueWithoutResponse(new TextEncoder().encode(btn.dataset.cue));
+    } catch (e) {
+      setStatus('Gönderilemedi: ' + e.message);
+    }
+    setTimeout(() => { if (cueChar) setCuesEnabled(true); }, LOCK_MS);
+  }));
+</script>
+</body>
+</html>
