@@ -80,7 +80,7 @@
   connectBtn.addEventListener('click', async () => {
     if (!navigator.bluetooth) { setStatus('Bu tarayıcıda Web Bluetooth yok (Android Chrome kullan)'); return; }
     try {
-      device = await navigator.bluetooth.requestDevice({ filters: [{ services: [SERVICE] }] });
+      device = await navigator.bluetooth.requestDevice({ filters: [{ services: [SERVICE] }, { namePrefix: 'KAPI' }], optionalServices: [SERVICE] });
       device.addEventListener('gattserverdisconnected', onDisconnected);
       await attach();
     } catch (e) {
