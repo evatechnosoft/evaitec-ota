@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapı servo</title>
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; background: #111; color: #eee;
+         display: flex; flex-direction: column; gap: 14px; padding: 16px; min-height: 100vh; box-sizing: border-box; }
+  #status { text-align: center; font-size: 1.1rem; min-height: 1.4em; }
+  button { border: 0; border-radius: 16px; font-size: 2rem; font-weight: 600; color: #fff; padding: 0; }
+  button:disabled { opacity: .35; }
+  #connect { background: #2d5be3; font-size: 1.3rem; padding: 18px; }
+  .cmd { flex: 1; min-height: 110px; }
+  #open { background: #1f8a4c; }
+  #rest { background: #b8860b; }
+  .row { display: flex; gap: 10px; align-items: center; }
+  .row button { flex: 1; min-height: 64px; font-size: 1.6rem; background: #444; }
+  .row output { flex: 1.4; text-align: center; font-size: 1.2rem; }
+</style>
+</head>
+<body>
+<div id="status">Bağlı değil</div>
+<button id="connect">Bağlan</button>
+<button class="cmd" id="open" data-cmd="a" disabled>Aç</button>
+<button class="cmd" id="rest" data-cmd="r" disabled>Dik dur + sal</button>
+<div class="row">
+  <button id="minus" disabled>−10°</button>
+  <output id="angle">İtme 30°</output>
+  <button id="plus" disabled>+10°</button>
+</div>
+<script>
+  // Must match bench/servo_test/src/main.cpp
+  const SERVICE = 'd0d0c0de-0000-4000-8000-000000000001';
+  const CMD_CHAR = 'd0d0c0de-0000-4000-8000-000000000002';
+  const LOCK_MS = 2000; // push (1 s) + return (0.5 s) + margin
+
+  const statusEl = document.getElementById('status');
+  const angleEl = document.getElementById('angle');
+  const connectBtn = document.getElementById('connect');
+  const btns = [...document.querySelectorAll('button:not(#connect)')];
+  let device = null;
+  let cmdChar = null;
+  let pushDeg = 30; // firmware default; page resends on change
+
+  const setStatus = (text) => { statusEl.textContent = text; };
+  const setEnabled = (on) => btns.forEach((b) => { b.disabled = !on; });
+
+  async function send(text, lockMs) {
+    if (!cmdChar) return;
+    setEnabled(false);
+    try {
+      await cmdChar.writeValueWithoutResponse(new TextEncoder().encode(text));
+    } catch (e) {
+      setStatus('Gönderilemedi: ' + e.message);
+    }
+    setTimeout(() => { if (cmdChar) setEnabled(true); }, lockMs);
+  }
+
+  async function attach() {
+    setStatus('Bağlanıyor…');
+    const server = await device.gatt.connect();
+    const svc = await server.getPrimaryService(SERVICE);
+    cmdChar = await svc.getCharacteristic(CMD_CHAR);
+    setStatus('Bağlı: ' + (device.name || 'kapı'));
+    setEnabled(true);
+    await send('p' + pushDeg, 300); // firmware forgets the angle on reboot
+  }
+
+  async function onDisconnected() {
+    cmdChar = null;
+    setEnabled(false);
+    setStatus('Bağlantı koptu, yeniden deneniyor…');
+    for (let i = 0; i < 5 && device; i++) {
+      try { await attach(); return; } catch { await new Promise((r) => setTimeout(r, 1000)); }
+    }
+    setStatus('Bağlantı yok — Bağlan\'a bas');
+  }
+
+  connectBtn.addEventListener('click', async () => {
+    if (!navigator.bluetooth) { setStatus('Bu tarayıcıda Web Bluetooth yok (Android Chrome kullan)'); return; }
+    try {
+      device = await navigator.bluetooth.requestDevice({ filters: [{ services: [SERVICE] }] });
+      device.addEventListener('gattserverdisconnected', onDisconnected);
+      await attach();
+    } catch (e) {
+      setStatus('Hata: ' + e.message);
+    }
+  });
+
+  document.querySelectorAll('.cmd').forEach((b) => b.addEventListener('click', () => send(b.dataset.cmd, LOCK_MS)));
+
+  const nudge = (d) => {
+    pushDeg = Math.min(180, Math.max(0, pushDeg + d));
+    angleEl.textContent = 'İtme ' + pushDeg + '°';
+    send('p' + pushDeg, 300);
+  };
+  document.getElementById('minus').addEventListener('click', () => nudge(-10));
+  document.getElementById('plus').addEventListener('click', () => nudge(10));
+</script>
+</body>
+</html>
