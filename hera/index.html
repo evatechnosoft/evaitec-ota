@@ -16,6 +16,9 @@
   [data-cue="2"] { background: #b8860b; }
   [data-cue="3"] { background: #c0392b; }
   #volrow { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; }
+  #tonerow { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; }
+  #hz { flex: 1; height: 40px; }
+  #try { font-size: 1.1rem; padding: 10px 16px; background: #555; }
   #vol { flex: 1; height: 40px; accent-color: #2d5be3; }
 </style>
 </head>
@@ -23,6 +26,7 @@
 <div id="status">Bağlı değil</div>
 <button id="connect">Bağlan</button>
 <label id="volrow">Ses <input id="vol" type="range" min="0" max="100" step="5" value="30" disabled> <span id="volval">30</span></label>
+<label id="tonerow">Ton <input id="hz" type="range" min="1500" max="5000" step="100" value="2800" disabled> <span id="hzval">2800</span> Hz <button id="try" disabled>Dene</button></label>
 <button class="cue" data-cue="1" disabled>Gel</button>
 <button class="cue" data-cue="2" disabled>Otur</button>
 <button class="cue" data-cue="3" disabled>Aferin</button>
@@ -34,7 +38,9 @@
 
   const statusEl = document.getElementById('status');
   const connectBtn = document.getElementById('connect');
-  const cueBtns = [...document.querySelectorAll('.cue')];
+  const cueBtns = [...document.querySelectorAll('.cue'), document.getElementById('try'), document.getElementById('hz')];
+  const hzEl = document.getElementById('hz');
+  const hzValEl = document.getElementById('hzval');
   const volEl = document.getElementById('vol');
   const volValEl = document.getElementById('volval');
   try { const v = localStorage.getItem('hera-vol'); if (v !== null) volEl.value = v; } catch {}
@@ -86,7 +92,16 @@
     try { await sendVolume(); } catch (e) { setStatus('Ses gönderilemedi: ' + e.message); }
   });
 
-  cueBtns.forEach((btn) => btn.addEventListener('click', async () => {
+  hzEl.addEventListener('input', () => { hzValEl.textContent = hzEl.value; });
+  // Firmware protocol: 't' + hz (u16 LE) + ms (u16 LE); test tone to find the piezo's loud band.
+  document.getElementById('try').addEventListener('click', async () => {
+    if (!cueChar) return;
+    const b = new DataView(new ArrayBuffer(5));
+    b.setUint8(0, 0x74); b.setUint16(1, Number(hzEl.value), true); b.setUint16(3, 300, true);
+    try { await cueChar.writeValueWithoutResponse(b.buffer); } catch (e) { setStatus('Gönderilemedi: ' + e.message); }
+  });
+
+  cueBtns.filter((b) => b.dataset.cue).forEach((btn) => btn.addEventListener('click', async () => {
     if (!cueChar) return;
     setCuesEnabled(false);
     try {
