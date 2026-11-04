@@ -15,11 +15,14 @@
   [data-cue="1"] { background: #1f8a4c; }
   [data-cue="2"] { background: #b8860b; }
   [data-cue="3"] { background: #c0392b; }
+  #volrow { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; }
+  #vol { flex: 1; height: 40px; accent-color: #2d5be3; }
 </style>
 </head>
 <body>
 <div id="status">Bağlı değil</div>
 <button id="connect">Bağlan</button>
+<label id="volrow">Ses <input id="vol" type="range" min="0" max="100" step="5" value="30" disabled> <span id="volval">30</span></label>
 <button class="cue" data-cue="1" disabled>Gel</button>
 <button class="cue" data-cue="2" disabled>Otur</button>
 <button class="cue" data-cue="3" disabled>Aferin</button>
@@ -32,24 +35,33 @@
   const statusEl = document.getElementById('status');
   const connectBtn = document.getElementById('connect');
   const cueBtns = [...document.querySelectorAll('.cue')];
+  const volEl = document.getElementById('vol');
+  const volValEl = document.getElementById('volval');
+  try { const v = localStorage.getItem('hera-vol'); if (v !== null) volEl.value = v; } catch {}
+  volValEl.textContent = volEl.value;
   let device = null;
   let cueChar = null;
 
   const setStatus = (text) => { statusEl.textContent = text; };
   const setCuesEnabled = (on) => cueBtns.forEach((b) => { b.disabled = !on; });
+  // Firmware protocol: 'v' + one byte 0-100; 100 = firmware's capped maximum.
+  const sendVolume = () => cueChar && cueChar.writeValueWithoutResponse(new Uint8Array([0x76, Number(volEl.value)]));
 
   async function attach() {
     setStatus('Bağlanıyor…');
     const server = await device.gatt.connect();
     const svc = await server.getPrimaryService(SERVICE);
     cueChar = await svc.getCharacteristic(CUE_CHAR);
+    await sendVolume();
     setStatus('Bağlı: ' + (device.name || 'tasma'));
     setCuesEnabled(true);
+    volEl.disabled = false;
   }
 
   async function onDisconnected() {
     cueChar = null;
     setCuesEnabled(false);
+    volEl.disabled = true;
     setStatus('Bağlantı koptu, yeniden deneniyor…');
     for (let i = 0; i < 5 && device; i++) {
       try { await attach(); return; } catch { await new Promise((r) => setTimeout(r, 1000)); }
@@ -66,6 +78,12 @@
     } catch (e) {
       setStatus('Hata: ' + e.message);
     }
+  });
+
+  volEl.addEventListener('input', () => { volValEl.textContent = volEl.value; });
+  volEl.addEventListener('change', async () => {
+    try { localStorage.setItem('hera-vol', volEl.value); } catch {}
+    try { await sendVolume(); } catch (e) { setStatus('Ses gönderilemedi: ' + e.message); }
   });
 
   cueBtns.forEach((btn) => btn.addEventListener('click', async () => {
