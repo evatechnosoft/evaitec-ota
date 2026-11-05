@@ -17,6 +17,9 @@
   .row { display: flex; gap: 10px; align-items: center; }
   .row button { flex: 1; min-height: 64px; font-size: 1.6rem; background: #444; }
   .row output { flex: 1.4; text-align: center; font-size: 1.2rem; }
+  h3 { margin: 8px 0 0; font-size: 1rem; color: #aaa; }
+  input[type=range] { width: 100%; height: 44px; }
+  #start { background: #1f8a4c; } #stop { background: #c0392b; }
 </style>
 </head>
 <body>
@@ -29,6 +32,22 @@
   <output id="angle">İtme 30°</output>
   <button id="plus" disabled>+10°</button>
 </div>
+<h3>Elle kumanda (360° servoda 1500 = dur, altı/üstü = yön, uzaklık = hız)</h3>
+<output id="usOut" style="text-align:center;font-size:1.4rem">1500 µs</output>
+<input type="range" id="us" min="500" max="2500" step="10" value="1500" disabled>
+<div class="row">
+  <button id="usMinus" disabled>◀ −50</button>
+  <button id="usPlus" disabled>+50 ▶</button>
+</div>
+<div class="row">
+  <button id="start" disabled>Start</button>
+  <button id="stop" disabled>Stop</button>
+</div>
+<div class="row">
+  <button class="preset" data-us="1300" disabled>↺ Geri</button>
+  <button class="preset" data-us="1500" disabled>Orta</button>
+  <button class="preset" data-us="1700" disabled>↻ İleri</button>
+</div>
 <script>
   // Must match bench/servo_test/src/main.cpp
   const SERVICE = 'd0d0c0de-0000-4000-8000-000000000001';
@@ -38,7 +57,7 @@
   const statusEl = document.getElementById('status');
   const angleEl = document.getElementById('angle');
   const connectBtn = document.getElementById('connect');
-  const btns = [...document.querySelectorAll('button:not(#connect)')];
+  const btns = [...document.querySelectorAll('button:not(#connect), input[type=range]')];
   let device = null;
   let cmdChar = null;
   let pushDeg = 30; // firmware default; page resends on change
@@ -97,6 +116,32 @@
   };
   document.getElementById('minus').addEventListener('click', () => nudge(-10));
   document.getElementById('plus').addEventListener('click', () => nudge(10));
+
+  // Manual pulse: Start makes the slider live, Stop releases (duty 0).
+  const usEl = document.getElementById('us');
+  const usOut = document.getElementById('usOut');
+  let live = false;
+  let busy = false;
+  async function sendUs() {
+    usOut.textContent = usEl.value + ' µs';
+    if (!live || !cmdChar || busy) return; // drop while a write is in flight; last value is resent below
+    busy = true;
+    const v = usEl.value;
+    try { await cmdChar.writeValueWithoutResponse(new TextEncoder().encode('u' + v)); }
+    catch (e) { setStatus('Gönderilemedi: ' + e.message); }
+    busy = false;
+    if (usEl.value !== v) sendUs();
+  }
+  const setUs = (v) => { usEl.value = Math.min(2500, Math.max(500, v)); sendUs(); };
+  usEl.addEventListener('input', sendUs);
+  document.getElementById('usMinus').addEventListener('click', () => setUs(+usEl.value - 50));
+  document.getElementById('usPlus').addEventListener('click', () => setUs(+usEl.value + 50));
+  document.getElementById('start').addEventListener('click', () => { live = true; sendUs(); });
+  document.getElementById('stop').addEventListener('click', async () => {
+    live = false;
+    if (cmdChar) await cmdChar.writeValueWithoutResponse(new TextEncoder().encode('s')).catch((e) => setStatus('Gönderilemedi: ' + e.message));
+  });
+  document.querySelectorAll('.preset').forEach((b) => b.addEventListener('click', () => { live = true; setUs(+b.dataset.us); }));
 </script>
 </body>
 </html>
